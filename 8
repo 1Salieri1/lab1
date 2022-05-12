@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Func<Action<bool>, double, double> twoParams = (y, x) =>
+            {
+
+                return (true) ? (6 * x) : (x);
+            };
+            Action<bool> TT = MyFunc;
+            Console.WriteLine(twoParams(TT, 5));
+        }
+        static void MyFunc(bool s)
+        {
+            Console.WriteLine(s);
+        }
+    }
+}
